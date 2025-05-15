@@ -197,11 +197,23 @@
     }, 10000);
 
     const popup = document.getElementById("popupFake");
+    const nomes = [
+      "Lucas de SP", "Ana de RJ", "Carlos de BH", "Juliana de DF", "Rafael de SC",
+      "Marina de MG", "Fernando de PE", "Bianca de ES", "Eduardo de PR", "Tatiane de GO",
+      "Marcelo de RS", "Larissa de CE", "Thiago de AM", "Patrícia de AL", "Henrique de PB",
+      "Camila de RN", "Bruno de MT", "Isabela de MA", "Gabriel de PI", "Sabrina de SE",
+      "Vinícius de TO", "Paula de RO", "Felipe de AC", "Tatiane de RR", "Lucas de AP",
+      "Débora de SP", "João de RJ", "Roberta de MG", "André de SC", "Letícia de BA"
+    ];
+    let index = 0;
+
     setInterval(() => {
+      popup.textContent = `⚡ ${nomes[index]} acabou de liberar o acesso`;
       popup.style.display = "block";
       setTimeout(() => {
         popup.style.display = "none";
       }, 4000);
+      index = (index + 1) % nomes.length;
     }, 15000);
   </script>
 </body>
