@@ -95,7 +95,7 @@
       font-weight: bold;
     }
 
-    .popup, .comentarios, .pagamentos, .suporte {
+    .popup, .comentarios, .pagamentos, .suporte, .simulador, .inatividade-alerta, .comentario-falso, .grupo-fake {
       background: #111;
       border: 1px solid #00ff99;
       padding: 20px;
@@ -114,6 +114,13 @@
       font-size: 14px;
       border-radius: 5px;
       display: none;
+    }
+
+    .img-fake-whatsapp {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
     }
 
     @media (max-width: 480px) {
@@ -135,53 +142,31 @@
       Se tu tá liso, devendo, sem respeito e sem opção... aqui é tua última chance.
       Vai aprender o que ninguém tem coragem de mostrar: golpe, manipulação, fraude — e como meter dinheiro no bolso sem depender de CPF nem CLT.
     </p>
-    <h2>🧠 CONTEÚDO PROIBIDO QUE PAGA PIX TODO DIA:</h2>
-    <ul>
-      <li>Clonagem de cartões gringos e uso sem bloqueio</li>
-      <li>Venda de contas Netflix, Amazon, Disney+ com cartão batido</li>
-      <li>Criação de empresa laranja em 30 minutos</li>
-      <li>CPF e dados de gringo raspados com bot</li>
-      <li>Falsificação de documentos padrão cartório</li>
-      <li>Dropshipping fake com produto falso e rastreável</li>
-      <li>Venda de encapsulado milagroso com copy doente</li>
-      <li>Bypass pra entrar em casa de aposta sem verificação</li>
-      <li>Seguidores e curtidas falsas com IP mascarado</li>
-      <li>Oráculo espiritual fake vendendo reza por R$297</li>
-      <li>Boleto falso com conversão de 12%</li>
-      <li>Mentoria com ex-bandido da deep web</li>
-    </ul>
-    <div class="pix-area">
-      <h2>💸 ACESSO APENAS PRA QUEM TEM CORAGEM</h2>
-      <p>Pix de <strong>R$25,00</strong> abaixo. Envia, cola o comprovante no WhatsApp e entra no submundo.</p>
-      <strong>Chave Pix:</strong>
-      <strong>eu.rdinizs@gmail.com</strong>
-      <p>(Nome que aparece: RAQUEL DINIZ E SILVA)</p>
-      <div class="contador">⚠️ Apenas <span id="contador">5</span> acessos restantes hoje</div>
-    </div>
-    <a href="https://wa.me/5551996148568" class="btn">QUERO ACESSAR AGORA</a>
 
-    <div class="comentarios">
-      <h2>📣 GENTE QUE JÁ PEGOU O CONTEÚDO</h2>
-      <p><strong>Renato S.:</strong> "Já fiz R$700 em 2 dias, surreal... vale cada centavo!"</p>
-      <p><strong>Juliana R.:</strong> "Comprei achando que era zoeira, mas é real. Já saquei da casa de aposta."</p>
-      <p><strong>Marcos F.:</strong> "Mano do céu, a parte da falsificação é coisa de filme."</p>
+    <div class="simulador">
+      <h2>🧠 QUER SABER QUANTO PODE GANHAR?</h2>
+      <p>Digite quanto quer faturar por dia e descubra como isso é ridiculamente fácil:</p>
+      <input type="number" id="ganhoDesejado" placeholder="Ex: 300" style="width:100%;padding:10px;font-size:16px;margin-bottom:10px;">
+      <button onclick="simularLucro()" class="btn">CALCULAR AGORA</button>
+      <p id="resultadoSimulador"></p>
     </div>
 
-    <div class="pagamentos">
-      <h2>🧾 ÚLTIMOS PAGAMENTOS CONFIRMADOS</h2>
-      <ul>
-        <li>Lucas C. - R$25,00 - 10:32</li>
-        <li>Ana B. - R$25,00 - 10:30</li>
-        <li>Thiago D. - R$25,00 - 10:28</li>
-        <li>Priscila M. - R$25,00 - 10:26</li>
-      </ul>
+    <div class="comentario-falso">
+      <h2>📣 HISTÓRIA QUE VAI TE ENVERGONHAR</h2>
+      <p><strong>Tatiane L.:</strong> "Sou mãe solteira com 2 filhos. Tava comendo miojo 3x por dia. Fiz o acesso e hoje pago tudo no débito. Obrigada por ensinar o jogo sujo."</p>
     </div>
 
-    <div class="suporte">
-      <h2>📞 PRECISA DE AJUDA?</h2>
-      <p>Fala direto com nosso suporte no WhatsApp clicando abaixo:</p>
-      <a href="https://wa.me/5551996148568" class="btn">SUPORTE IMEDIATO</a>
+    <div class="grupo-fake">
+      <h2>📢 GRUPO VIP EM MOVIMENTO</h2>
+      <p>Gente trocando bizu, fotos de saques e link de ferramenta a todo momento:</p>
+      <img src="https://i.imgur.com/ekqzWfl.jpg" alt="Grupo Fake" class="img-fake-whatsapp" />
     </div>
+
+    <div class="inatividade-alerta" id="alertaInatividade" style="display:none;text-align:center;color:#ff0055;font-weight:bold;">
+      ATENÇÃO: Inatividade detectada. Seu acesso será encerrado em breve...
+    </div>
+
+    <a href="https://wa.me/5551996148568" class="btn">CLIQUE PARA VER MAIS DETALHES</a>
   </div>
 
   <div class="popup" id="popupFake">⚡ Lucas de SP acabou de liberar o acesso</div>
@@ -215,6 +200,29 @@
       }, 4000);
       index = (index + 1) % nomes.length;
     }, 15000);
+
+    function simularLucro() {
+      const valor = document.getElementById("ganhoDesejado").value;
+      const resultado = document.getElementById("resultadoSimulador");
+      if (!valor || valor <= 0) {
+        resultado.textContent = "Digite um valor válido, seu animal.";
+        return;
+      }
+      resultado.textContent = `Com apenas R$25,00 você já começa a faturar R$${valor} por dia. Mas tem que agir agora.`;
+    }
+
+    let tempoInativo = 0;
+    setInterval(() => {
+      tempoInativo += 1;
+      if (tempoInativo >= 20) {
+        document.getElementById("alertaInatividade").style.display = 'block';
+      }
+    }, 1000);
+
+    document.onmousemove = document.onkeydown = () => {
+      tempoInativo = 0;
+      document.getElementById("alertaInatividade").style.display = 'none';
+    };
   </script>
 </body>
 </html>
