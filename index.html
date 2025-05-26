@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🛑 ÚLTIMA CHANCE PRA SAIR DO BURACO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <title>🚩 Última Chance Pra Sair do Buraco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -13,20 +13,20 @@
     }
 
     body {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Inter', sans-serif;
       background-color: #0a0a0a;
       color: #00ff99;
       padding: 20px;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       background: #111;
       padding: 30px;
       border: 2px solid #00ff99;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 153, 0.3);
     }
 
     h1, h2 {
@@ -35,38 +35,19 @@
       margin-bottom: 20px;
     }
 
-    p {
+    p, li {
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     ul {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
     }
 
     li::before {
       content: '💣 ';
       color: #ff0055;
-    }
-
-    .pix-area {
-      background: #000;
-      padding: 20px;
-      border: 1px dashed #00ff99;
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .pix-area strong {
-      display: block;
-      font-size: 1.1em;
-      margin: 10px 0;
     }
 
     .btn {
@@ -77,144 +58,166 @@
       display: block;
       width: 100%;
       font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e6004c;
-    }
-
-    .contador {
-      text-align: center;
-      font-size: 18px;
-      color: #ff0055;
-      margin-top: 10px;
       font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      animation: pulse 1.5s infinite;
     }
 
-    .popup, .comentarios, .pagamentos, .suporte {
-      background: #111;
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 0, 85, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0); }
+    }
+
+    .gratis-vs-pago {
+      background: #000;
       border: 1px solid #00ff99;
       padding: 20px;
-      margin-top: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .gratis-vs-pago table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+    }
+
+    .gratis-vs-pago th, .gratis-vs-pago td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #00ff99;
+    }
+
+    .pix-area {
+      background: #000;
+      padding: 20px;
+      border: 1px dashed #00ff99;
+      margin: 30px 0;
+      text-align: center;
       border-radius: 10px;
     }
 
-    .popup {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #000;
-      border: 1px solid #00ff99;
-      color: #00ff99;
-      padding: 10px 15px;
-      font-size: 14px;
-      border-radius: 5px;
-      display: none;
+    .pix-area strong {
+      display: block;
+      font-size: 1.1em;
+      margin: 10px 0;
     }
 
-    @media (max-width: 480px) {
-      .container {
-        padding: 20px;
-      }
+    .popup-compartilhar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      color: #00ff99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      text-align: center;
+      padding: 20px;
+    }
 
-      .btn {
-        font-size: 16px;
-        padding: 12px;
-      }
+    .popup-compartilhar button {
+      margin-top: 20px;
+      background: #ff0055;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🚨 ÚLTIMA SAÍDA PRA QUEM TÁ NO FUNDO DO POÇO</h1>
-    <p>
-      Se tu tá liso, devendo, sem respeito e sem opção... aqui é tua última chance.
-      Vai aprender o que ninguém tem coragem de mostrar: golpe, manipulação, fraude — e como meter dinheiro no bolso sem depender de CPF nem CLT.
-    </p>
-    <h2>🧠 CONTEÚDO PROIBIDO QUE PAGA PIX TODO DIA:</h2>
-    <ul>
-      <li>Clonagem de cartões gringos e uso sem bloqueio</li>
-      <li>Venda de contas Netflix, Amazon, Disney+ com cartão batido</li>
-      <li>Criação de empresa laranja em 30 minutos</li>
-      <li>CPF e dados de gringo raspados com bot</li>
-      <li>Falsificação de documentos padrão cartório</li>
-      <li>Dropshipping fake com produto falso e rastreável</li>
-      <li>Venda de encapsulado milagroso com copy doente</li>
-      <li>Bypass pra entrar em casa de aposta sem verificação</li>
-      <li>Seguidores e curtidas falsas com IP mascarado</li>
-      <li>Oráculo espiritual fake vendendo reza por R$297</li>
-      <li>Boleto falso com conversão de 12%</li>
-      <li>Mentoria com ex-bandido da deep web</li>
-    </ul>
+    <h1>🚨 SAIA DO FUNDO DO POÇO AGORA</h1>
+
+    <div class="gratis-vs-pago">
+      <h2>✨ GRUPO GRÁTIS VS GRUPO PAGO ✨</h2>
+      <table>
+        <tr>
+          <th></th>
+          <th>GRÁTIS</th>
+          <th>PAGO</th>
+        </tr>
+        <tr>
+          <td>Acesso ao Conteúdo Proibido</td>
+          <td>Limitado</td>
+          <td>Ilimitado</td>
+        </tr>
+        <tr>
+          <td>Atualizações Diárias</td>
+          <td>1x por semana</td>
+          <td>Todo dia</td>
+        </tr>
+        <tr>
+          <td>Suporte VIP</td>
+          <td>Não</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Entradas em Golpes Premium</td>
+          <td>Nunca</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Acesso a PDFs e Ferramentas Exclusivas</td>
+          <td>Não</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Replays de Aulas e Mentorias</td>
+          <td>Não</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Grupo Fechado no Telegram</td>
+          <td>Não</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Lives com Conteúdo Avançado</td>
+          <td>Não</td>
+          <td>Sim</td>
+        </tr>
+      </table>
+      <br />
+      <a href="https://chat.whatsapp.com/LEzpsyg5Pth2SF1JP8oM7p" onclick="abrirPopup()" class="btn">QUERO ENTRAR NO GRUPO GRÁTIS</a>
+    </div>
+
     <div class="pix-area">
-      <h2>💸 ACESSO APENAS PRA QUEM TEM CORAGEM</h2>
+      <h2>💸 ACESSO PAGO PARA OS OBSTINADOS</h2>
       <p>Pix de <strong>R$25,00</strong> abaixo. Envia, cola o comprovante no WhatsApp e entra no submundo.</p>
       <strong>Chave Pix:</strong>
       <strong>eu.rdinizs@gmail.com</strong>
       <p>(Nome que aparece: RAQUEL DINIZ E SILVA)</p>
-      <div class="contador">⚠️ Apenas <span id="contador">5</span> acessos restantes hoje</div>
-    </div>
-    <a href="https://wa.me/5551996148568" class="btn">QUERO ACESSAR AGORA</a>
-
-    <div class="comentarios">
-      <h2>📣 GENTE QUE JÁ PEGOU O CONTEÚDO</h2>
-      <p><strong>Renato S.:</strong> "Já fiz R$700 em 2 dias, surreal... vale cada centavo!"</p>
-      <p><strong>Juliana R.:</strong> "Comprei achando que era zoeira, mas é real. Já saquei da casa de aposta."</p>
-      <p><strong>Marcos F.:</strong> "Mano do céu, a parte da falsificação é coisa de filme."</p>
-    </div>
-
-    <div class="pagamentos">
-      <h2>🧾 ÚLTIMOS PAGAMENTOS CONFIRMADOS</h2>
-      <ul>
-        <li>Lucas C. - R$25,00 - 10:32</li>
-        <li>Ana B. - R$25,00 - 10:30</li>
-        <li>Thiago D. - R$25,00 - 10:28</li>
-        <li>Priscila M. - R$25,00 - 10:26</li>
-      </ul>
-    </div>
-
-    <div class="suporte">
-      <h2>📞 PRECISA DE AJUDA?</h2>
-      <p>Fala direto com nosso suporte no WhatsApp clicando abaixo:</p>
-      <a href="https://wa.me/5551996148568" class="btn">SUPORTE IMEDIATO</a>
+      <a href="https://wa.me/5551996148568" class="btn">QUERO ACESSAR AGORA</a>
     </div>
   </div>
 
-  <div class="popup" id="popupFake">⚡ Lucas de SP acabou de liberar o acesso</div>
+  <div class="popup-compartilhar" id="popupCompartilhar">
+    <h2>⚠️ ANTES DE ENTRAR NO GRUPO GRÁTIS...</h2>
+    <p>Compartilhe esse site com pelo menos 1 amigo pra desbloquear o acesso gratuito.</p>
+    <button onclick="fecharPopup()">JÁ COMPARTILHEI</button>
+  </div>
 
   <script>
-    let contador = 5;
-    const el = document.getElementById("contador");
-    setInterval(() => {
-      if (contador > 1) {
-        contador--;
-        el.textContent = contador;
-      }
-    }, 10000);
+    function abrirPopup() {
+      document.getElementById('popupCompartilhar').style.display = 'flex';
+    }
 
-    const popup = document.getElementById("popupFake");
-    const nomes = [
-      "Lucas de SP", "Ana de RJ", "Carlos de BH", "Juliana de DF", "Rafael de SC",
-      "Marina de MG", "Fernando de PE", "Bianca de ES", "Eduardo de PR", "Tatiane de GO",
-      "Marcelo de RS", "Larissa de CE", "Thiago de AM", "Patrícia de AL", "Henrique de PB",
-      "Camila de RN", "Bruno de MT", "Isabela de MA", "Gabriel de PI", "Sabrina de SE",
-      "Vinícius de TO", "Paula de RO", "Felipe de AC", "Tatiane de RR", "Lucas de AP",
-      "Débora de SP", "João de RJ", "Roberta de MG", "André de SC", "Letícia de BA"
-    ];
-    let index = 0;
-
-    setInterval(() => {
-      popup.textContent = `⚡ ${nomes[index]} acabou de liberar o acesso`;
-      popup.style.display = "block";
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 4000);
-      index = (index + 1) % nomes.length;
-    }, 15000);
+    function fecharPopup() {
+      document.getElementById('popupCompartilhar').style.display = 'none';
+    }
   </script>
 </body>
 </html>
